@@ -22,7 +22,8 @@
 				            rgb(160, 165, 175) -12px -18px 50px 0px inset,rgb(250, 252, 255) 8px 12px 30px 0px inset ; 
 				margin: auto;
 				border-radius: 50px;
-				margin-top: 130px;
+				/* margin-top: 130px; */
+				margin-top: calc(42vh - 200px) ;
 				text-align: center;
 				font-size: 0;
 				transition: all 1s ease;
@@ -102,13 +103,15 @@
 			.lens1{				
 				display: inline-block;
 				border-radius: 20px;
+				width: 0;
+				height: 0;
 				border: 10px double #5e5e5e;
                 background-color: #040404;	 
 				position: absolute;
 				left: 12.85%;
 				top: 5.9%;
 				opacity: 0;
-				transition: all 1s ease-in-out ;
+				transition: all 1s ease ;
 			}
 			.flash{
 				display: inline-block;
@@ -195,7 +198,8 @@
 			.a:hover{
 				/* transform: scale(1.0,1.5); */
 				height: 600px;
-				margin-top: 50px;
+				/* margin-top: 50px; */
+				margin-top: calc(48vh - 300px) ;
 				border:inset #eee 5px ;
 				border-color: rgba(224, 224, 224, 0.9);
 				background-color: rgb(153, 179, 204);
@@ -205,7 +209,8 @@
 			.a:focus{				
 				height: 620px;
 			    width: 480px;
-				margin-top: 40px;
+				/* margin-top: 40px; */
+				margin-top: calc(47vh - 310px) ;
 				border:inset #eee 5px ;
 				border-color: rgba(224, 224, 224, 0.95);
 				background-color: rgb(173, 175, 176);			
@@ -260,6 +265,7 @@
 				transition: all 0.5s;
 				animation: skip 1.2s ease-in infinite alternate -1.2s;
 				z-index: 99;
+				user-select: none;
 			}
 			@keyframes skip{
 				0%{transform: translateY(-15px);}
@@ -282,7 +288,8 @@
 				color: rgb(213, 219, 225);
 				text-align: center;
 				position: absolute;
-				top: 280px;
+				/* top: 280px; */
+				top: calc(50vh - 50px);
 				left:calc(50% - 250px);
 				opacity: 0;
 				display: none;				

@@ -21,12 +21,13 @@
 				box-shadow: rgb(160, 165, 175) 12px 18px 50px 0px,rgb(250, 252, 255) -8px -12px 30px 0px; 
 				margin-right: 100px;
 				border-radius: 65px;
-				margin-top: 100px;
+				/* margin-top: 100px;				 */
+				margin-top: calc(40vh - 175px) ;
 				text-align: center;
 				font-size: 0;
 				transition: all 0.4s ease;
 			}
-			.b{
+			.win{
 				margin-right: 0px;
 			}
 			.a:hover{
@@ -69,18 +70,18 @@
 		</style>
 	</head>
 	<body>
-		<div class="a" tabindex="1">			
+		<div class="a apple" tabindex="1">			
 				<div class="main"><div class="logo"></div></div>				
 				<div class="helper"></div>	
 		</div>
-		<div class="a b" tabindex="1">
+		<div class="a win" tabindex="1">
 				<div class="main"><div class="logo2"></div></div>			
 				<div class="helper"></div>	
 		</div>
 		
         <script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script>
-			var $a=$('.a');
+			var $a=$('.a.apple');
 			$a.click(function(){
 				window.location.href = 'apple.html';				　　
 			});
