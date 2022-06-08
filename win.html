@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>			
+			*{margin: 0; 
+			padding: 0;
+			outline: none;
+			cursor: url('cursor.ico'), default;
+			}
+			body{
+				background-color: rgb(213, 219, 225);	
+				position: relative;				
+			} 
+			.window{
+				width: 420px;
+				margin: auto;
+				margin-top:calc(42vh - 210px);
+			}
+			.kuang{
+				width: 380px;
+				height: 400px;
+				border: 20px ridge rgb(213, 219, 225);
+				box-shadow: rgb(156, 161, 169) 6px 9px 30px 0px,rgb(255, 255, 255) -6px -8px 30px 0px ,
+				            rgb(160, 165, 175) -6px -9px 30px 0px inset,rgb(250, 252, 255) 6px 8px 30px 0px inset ; 
+			    
+			}
+			.logo{
+				width: 50px;
+				height: 50px;
+				background-position: 50% 50%; 
+				background-size: 50px 50px;
+				background-repeat: no-repeat;
+				background-image: url(win.ico);
+				position: relative;
+				left: 70%;
+				top: 10%;
+				animation: skip 4s ease infinite alternate;
+			}
+			@keyframes skip{
+				0%{opacity: 1;}
+				100%{opacity: 0.1;}
+			}
+			.winlogo{
+				position: absolute;
+				width: 350px;
+				height: 350px;
+				left: calc(50vw - 175px);
+				top: calc(48% - 175px);
+				font-size: 0px;
+				
+			}
+			.awinlogo{
+				display: inline-block;				
+				width: 0px;
+				margin:5px 5px;				
+			}
+			.winlogo1{				
+				height: 117px;
+				border-right: 150px solid #888;
+				border-top: 22px solid transparent;		
+				transform: translate(-200px,-200px);	
+					opacity: 0;
+			}
+			.winlogo2{
+				height: 142px;
+				border-right: 180px solid #888;
+				border-top: 23px solid transparent;
+				transform: translate(200px,-200px);
+					opacity: 0;
+			}
+			.winlogo3{
+				height: 106px;
+				border-right: 150px solid #888;
+				border-bottom: 25px solid transparent;
+				position: relative;
+				top: -9.7%;
+				transform: translate(-200px,200px);				
+					opacity: 0;
+			}
+			.winlogo4{
+				height: 133px;
+				border-right: 180px solid #888;
+				border-bottom: 32px solid transparent;
+				transform: translate(200px,200px);
+					opacity: 0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="window">			
+			<div class="kuang">
+				<div class="logo"></div>
+			</div>
+		</div>
+		<div class="winlogo">
+			<div class="awinlogo winlogo1"></div>
+			<div class="awinlogo winlogo2"></div>
+			<div class="awinlogo winlogo3"></div>
+			<div class="awinlogo winlogo4"></div>
+		</div>
+		
+		<script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var $window=$('.window');
+			var $winlogo1=$('.winlogo1');
+			var $winlogo2=$('.winlogo2');
+			var $winlogo3=$('.winlogo3');
+			var $winlogo4=$('.winlogo4');
+			var x,y;
+			x1=-200;
+			y1=-200;
+			x2=200;
+			y2=-200;
+			x3=-200;
+			y3=200;
+			x4=200;
+			y4=200;
+			function add1(){
+				x1=x1*0.92;
+				y1=y1*0.92;
+				let result="translate("+x1+"px,"+y1+"px)";
+				return result;
+			}
+			function add2(){
+				x2=x2*0.92;
+				y2=y2*0.92;
+				let result="translate("+x2+"px,"+y2+"px)";
+				return result;
+			}
+			function add3(){
+				x3=x3*0.92;
+				y3=y3*0.92;
+				let result="translate("+x3+"px,"+y3+"px)";
+				return result;
+			}
+			function add4(){
+				x4=x4*0.92;
+				y4=y4*0.92;
+				let result="translate("+x4+"px,"+y4+"px)";
+				return result;
+			}
+			function opa(){
+				let result=1-x2/200;
+				return result;
+			}
+			function reopa(){				
+				let result=x2/200;
+				return result;
+			}
+            var flag=1;
+			window.onmousewheel=document.onmousewheel=(e)=>{
+			    if(e.wheelDelta<0){					
+					$winlogo1.css({'transform':add1()});					
+					$winlogo2.css({'transform':add2()});					
+					$winlogo3.css({'transform':add3()});
+					$winlogo4.css({'transform':add4()});
+					// if(flag==1){
+					// 	flag=0;
+					// 	$winlogo1.fadeTo(3000,1);
+					// 	$winlogo2.fadeTo(3000,1);
+					// 	$winlogo3.fadeTo(3000,1);
+					// 	$winlogo4.fadeTo(3000,1);
+					// 	$window.fadeTo(2000,0);						
+					// }
+					$winlogo1.css({'opacity':opa()});
+					$winlogo2.css({'opacity':opa()});					
+					$winlogo3.css({'opacity':opa()});
+					$winlogo4.css({'opacity':opa()});
+					$window.css({'opacity':reopa()});
+			    }       
+			}
+		</script>
+	</body>
+</html>
