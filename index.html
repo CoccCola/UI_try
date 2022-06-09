@@ -26,6 +26,11 @@
 				text-align: center;
 				font-size: 0;
 				transition: all 0.4s ease;
+				animation: showbegin 1s ease-in 1 ;
+			}
+			@keyframes showbegin{
+				0%{opacity: 0; box-shadow: rgb(160, 165, 175) 0px 0px 0px 0px,rgb(250, 252, 255) 0px 0px 0px 0px; }
+				100%{opacity: 1; box-shadow: rgb(160, 165, 175) 12px 18px 50px 0px,rgb(250, 252, 255) -8px -12px 30px 0px; }
 			}
 			.win{
 				margin-right: 0px;
@@ -39,7 +44,7 @@
 				box-shadow: rgb(160, 165, 175) 5px 5px 15px 0px inset,rgb(250, 252, 255) -5px -5px 15px 0px inset; 
 			}
 			.logo{				
-				background-image:url(苹果灰灰.ico) ;
+				background-image:url(pic/苹果灰灰.ico) ;
 				background-size: 120px 120px;
 				background-position: 50% 50%; 
 				width: 120px;
@@ -49,7 +54,7 @@
 				margin: auto;
 			}
 			.logo2{
-				background-image:url(win.ico) ;
+				background-image:url(pic/win.ico) ;
 				background-size: 120px 120px;
 				background-position: 50% 50%; 
 				width: 120px;
@@ -57,6 +62,7 @@
 				line-height: 350px;
 				margin: auto;
 			}
+			
 		    .main{
 				display: inline-block;
 				vertical-align: middle;				
@@ -89,7 +95,9 @@
 			$a.click(function(){
 				window.location.href = 'win.html';				　　
 			});
-			
+			document.oncontextmenu = function(e){
+				return false;
+			}
 		</script>
 	</body>
 </html>

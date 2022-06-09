@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>AirPods|iphone|ipad</title>
+		<title>apple</title>
 		<style>
 			
 			*{margin: 0; 
 			padding: 0;
 			outline: none;
-			cursor: url('cursor.ico'), default;
+			cursor: url('pic/cursor.ico'), default;
 			}
 			body{
 				background-color: rgb(213, 219, 225);							
@@ -220,7 +220,7 @@
 			
 			
 			.logo{				
-				background-image:url(苹果灰灰.ico) ;
+				background-image:url(pic/苹果灰灰.ico) ;
 				background-size: 85px 85px;
 				background-position: 50% 50%; 
 				width: 120px;
@@ -389,7 +389,14 @@
 					$me.fadeTo(800,0,fo);					
 				}				    
 			});
-
+			document.oncontextmenu = function(e){
+				return false;
+			}
+			document.onmouseup = function(e){
+				if(e.button == 2){
+					window.history.go(-1);      
+				}
+			}
         </script>
 	</body>
 </html>
